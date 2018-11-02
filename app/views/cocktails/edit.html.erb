@@ -1,7 +1,11 @@
-<h1>Edit your Cocktail</h1>
+<%= render "/shared/navbar" %>
 
-<div>
-<%= render "form", cocktail: @cocktail %>
+<div class = "container-show">
+  <h2>Edit your cocktail</h2>
+  <%= render "form", cocktail: @cocktail %>
 </div>
 
-<div><%= link_to "Back", cocktail_path %></div>
+<div class = "container-low"><%= link_to "Back", cocktail_path %>
+
+</div>
+

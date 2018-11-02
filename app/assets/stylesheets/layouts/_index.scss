@@ -3,3 +3,31 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+.container-show {
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  padding: 50px;
+}
+
+.container-low {
+  text-align: center;
+  background-color: #102A50;
+  color: white;
+  padding: 75px 0px;
+  border-bottom: 50px solid #102A50;
+}
+
+.wrapper {
+  background-color: #102A50;
+}
+
+.btn-yellow {
+  background-color: #EAB83F;
+  color: white;
+}
+
+.white {
+  color: white;
+}

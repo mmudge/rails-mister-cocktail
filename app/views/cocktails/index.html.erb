@@ -1,13 +1,22 @@
-<h1>Here is a list of your cocktails</h1>
-
-<div>
-<% @cocktails.each do |cocktail| %>
-  <div><%= link_to cocktail.name, cocktail_path(cocktail) %> -- <%= link_to "", cocktail_path(cocktail),
-          method: :delete,
-          data: { confirm: "Are you sure?" }, class: "far fa-trash-alt" %>
+<%= render "/shared/navbar" %>
+<%= render "/shared/banner",
+  banner_image: "http://vinepair.com/wp-content/uploads/2015/06/fake-cocktail-bar-liqueurs.jpg",
+  title: "Mr. Big Cocktail",
+  subtitle: "Never know where a couple cockies' will lead you!",
+  link: (link_to 'Mix a New Drink!', new_cocktail_path, class: "btn btn-yellow") %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= render "shared/card",
+        name: cocktail.name,
+        link: cocktail_path(cocktail),
+        src: "http://cdn.skim.gs/images/v1/msi/oqh2bwsvhiwjsfmsr6lj/valentines-day-cocktail-recipes" %>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <% end %>
 </div>
 
-<%= link_to "create", new_cocktail_path %>
 

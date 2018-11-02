@@ -1,7 +1,9 @@
-<h1>Create a new Cocktail</h1>
+<%= render "/shared/navbar" %>
+<div class="container-show">
+  <h1>Create a new Cocktail</h1>
 
-<%= render "form", cocktail: @cocktail %>
-
-<% end %>
-
-<%= link_to "Back", cocktails_path %>
+  <%= render "form", cocktail: @cocktail %>
+</div>
+<div class="container-low">
+  <%= link_to "Back", cocktails_path %>
+</div>

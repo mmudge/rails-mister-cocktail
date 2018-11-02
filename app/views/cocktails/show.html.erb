@@ -1,17 +1,26 @@
-<h1>Here is your Cocktail</h1>
+<%= render "/shared/navbar" %>
 
-<%= @cocktail.name %>
-<div>
-<% @cocktail.doses.each do |dose| %>
-  <div><%= dose.description %> -- <%= dose.ingredient.name %><%= link_to "", dose_path(dose),
-          method: :delete,
-          data: { confirm: "Are you sure?" }, class: "far fa-trash-alt" %></div>
+<%= render "/shared/banner",
+  banner_image: "http://vinepair.com/wp-content/uploads/2015/06/fake-cocktail-bar-liqueurs.jpg",
+  title: @cocktail.name,
+  subtitle: "",
+  link: (link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-yellow") %>
 
-<% end %>
+
+  <div class="container-show">
+    <div>
+      <% @cocktail.doses.each do |dose| %>
+      <div><%= dose.description %> -- <%= dose.ingredient.name %><%= link_to "", dose_path(dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" }, class: "far fa-trash-alt" %></div>
+      <% end %>
+    </div>
+  </div>
+
+<div class="container-low">
+  <div><%= link_to "Ingredients", new_cocktail_dose_path(@cocktail), class: "far fa-plus white"%></div>
+  <div><%= link_to "Edit", edit_cocktail_path(@cocktail), class: "far fa-edit white" %></div>
+  <div><%= link_to "Back", cocktails_path, class: "far fa-fast-backward white" %></div>
 </div>
-
-<%= link_to "Add Dose/Ingredients", new_cocktail_dose_path(@cocktail)  %>
-<%= link_to "Edit", edit_cocktail_path(@cocktail) %>
-<%= link_to "Back", cocktails_path %>
 
 <!-- dose.description and dose.ingredient.name -->
